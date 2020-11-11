@@ -43,7 +43,7 @@ Header.defaultProps = {
     onAdd: null
 }
 
-Header, propTypes = {
+Header.propTypes = {
     onAdd: PropTypes.func
 }
 

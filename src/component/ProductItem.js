@@ -15,7 +15,7 @@ const ProductItem = (props) => {
                 backgroundColor: status == 'complete' ? "red" : "#ffffff"
             }}
         >
-            <Text>{title}</Text>
+            <Text style={{ textDecorationLine: 'line-through' }}>{title}</Text>
         </TouchableOpacity>
     )
 }
@@ -26,7 +26,7 @@ ProductItem.defaultProps = {
     status: ""
 }
 
-ProductItem, propTypes = {
+ProductItem.propTypes = {
     onPress: PropTypes.func,
     title: PropTypes.string,
     status: PropTypes.string,
