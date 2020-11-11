@@ -151,6 +151,16 @@ android {
             keyPassword 'android'
         }
     }
+    flavorDimensions 'Test'
+    productFlavors {
+        dev {
+            dimension 'Test'
+            applicationIdSuffix '.dev'
+        }
+        prod{
+            dimension 'Test'
+        }
+    }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
