@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { actionAddProduct } from './redux/action/productAction'
-import Main from './screen/Main'
+import { actionAddProduct } from '../redux/action/productAction'
+import Main from '../screen/Main'
 
 const mapStateToProps = (state) => {
     const { product } = state.productReducer

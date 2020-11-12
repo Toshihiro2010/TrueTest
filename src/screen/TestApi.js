@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { Button, Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import { connect } from 'react-redux';
 import { call } from 'redux-saga/effects';
-import I18n from './src/common/i18nClient';
-import { getAccessToken, setAccessToken } from './src/common/storage/tokenStorage';
-import { actionChangeLanguage } from './src/redux/action/settingAction';
-import { doGet, doGet2, doPost, getFormData } from './src/service/ApiClient';
+import { setAccessToken } from '../common/storage/tokenStorage';
+import I18n from '../common/i18nClient'
+import { actionChangeLanguage } from '../redux/action/settingAction'
+import { doGet, doGet2, doPost, getFormData } from '../service/ApiClient';
+import { useNavigation } from '@react-navigation/native';
 
 
-const App = (props) => {
+const TestApi = (props) => {
     // const [locale, setLocale] = useState(I18n.currentLocale())
+
     const [isLogined, setIsLogined] = useState(false)
 
     const { actionChangeLanguage } = props
+
+    const navigation = useNavigation()
 
 
     return (
@@ -48,7 +52,7 @@ const App = (props) => {
                     // const path = 'https://jsonplaceholder.typicode.com/albums/1/photos'
                     // doGet('/users/toshihiro2010')
                     // const path = '/users/toshihiro2010'
-                    const path = 'http://10.186.17.91:3000/auth/authen'
+                    const path = 'http://10.186.17.131:3000/auth/authen'
                     doGet(path, {}, {
                         // handleError: (err) => {
                         //     alert(`err :${err.message}`)
@@ -77,7 +81,7 @@ const App = (props) => {
             <Button
                 accessibilityLabel="login"
                 onPress={() => {
-                    // setAccessToken("a1s2d3f34")
+                    setAccessToken("a1s2d3f34")
                     setIsLogined(!isLogined)
 
                 }}
@@ -85,6 +89,15 @@ const App = (props) => {
             />
 
             <Text accessibilityLabel="loginstatus">{isLogined ? "success" : "fail"}</Text>
+
+            <Button
+                accessibilityLabel="home"
+                onPress={() => {
+                    navigation.navigate("HomeScreen")
+                }}
+                title="HomeScreen"
+            />
+
 
 
 
@@ -108,7 +121,7 @@ const mapDispatchToProps = {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(TestApi)
 
 const styles = StyleSheet.create({
 

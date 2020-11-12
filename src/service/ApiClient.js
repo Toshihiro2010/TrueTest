@@ -1,4 +1,3 @@
-import { store } from '../../index'
 import Axios from '../common/axiosInstacne'
 import { getAccessToken, setAccessToken } from '../common/storage/tokenStorage'
 
@@ -7,7 +6,6 @@ const defaultHeader = {
 }
 
 const doGet = async (url, param = {}, option = {}) => {
-    // store.dispatch({ type: "BENT2010" })
     const request = {
         method: 'GET',
         param,
@@ -74,7 +72,7 @@ const doRequest = async (request) => {
         // console.log("error toJSON=> ", err.toJSON())
 
         if (handleError) {
-            handleError(err.response.data)
+            handleError(err?.response?.data)
         }
     })
 }
