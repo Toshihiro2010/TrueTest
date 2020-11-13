@@ -11,7 +11,7 @@ const Main = (props) => {
 
     const refFlatList = useRef(null)
     const onPressItem = (index) => {
-        
+
     }
     return (
         <>
@@ -33,10 +33,7 @@ const Main = (props) => {
                     <FlatList
                         ref={refFlatList}
                         data={product}
-                        key={(item) => item.productName}
-                        // onScrollEndDrag={(eve) => {
-                        //     console.log('eve => ', eve)
-                        // }}
+                        keyExtractor={(item) => item.productName}
                         onEndReached={info => {
                             console.log('endReach => ', info)
                         }}
