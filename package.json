@@ -7,8 +7,9 @@
     "android:dev": "npx react-native run-android --variant=devDebug --appIdSuffix=dev",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
-    "test:unit": "jest --testPathPattern=__tests__/*",
+    "test": "jest --testPathPattern=__tests__/*",
+    "test:q": "jest --testPathPattern=__tests__/QueryBoard.test.js",
+    "test:m": "jest --testPathPattern=__tests__/MainComponent.test.js",
     "test:ui": "cd test_project && yarn test:android",
     "lint": "eslint ."
   },
@@ -45,6 +46,8 @@
     "@babel/core": "^7.8.4",
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^1.1.0",
+    "@testing-library/jest-native": "^3.4.3",
+    "@testing-library/react-native": "^7.1.0",
     "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",
     "jest": "^25.1.0",
@@ -53,6 +56,9 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ],
     "transformIgnorePatterns": [
       "/node_modules/(?!native-base)/"
     ]

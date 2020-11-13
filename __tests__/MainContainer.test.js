@@ -4,12 +4,12 @@
 
 import 'react-native';
 import React from 'react';
-import App from '../src/App';
+import Main from '../src/container/Main';
 import configureMockStore from "redux-mock-store";
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import Main from '../src/screen/Main';
+
 import { Provider } from 'react-redux';
 
 
@@ -36,7 +36,7 @@ describe('My Connected React-Redux Component', () => {
 
     component = renderer.create(
       <Provider store={store}>
-        <App />
+        <Main />
       </Provider>
     );
   });

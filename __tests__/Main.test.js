@@ -7,8 +7,7 @@ import React from 'react';
 import configureMockStore from "redux-mock-store";
 
 import renderer from 'react-test-renderer';
-import Main from '../../src/screen/Main'
-
+import Main from '../src/screen/Main'
 const mockStore = configureMockStore();
 
 it('renders MainComponent', () => {
@@ -23,8 +22,8 @@ it('renders MainComponent', () => {
         }
     ]
     let component = renderer.create(<Main product={product} />);
-    // expect(component.toJSON()).toMatchSnapshot();
-    // renderer.create(<Main />);
+    expect(component.toJSON()).toMatchSnapshot();
+    renderer.create(<Main />);
 
 });
 
