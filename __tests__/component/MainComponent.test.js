@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import Main from '../src/screen/Main';
+import Main from '../../src/screen/Main';
 
 
 test('Main Component', () => {

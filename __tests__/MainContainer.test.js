@@ -15,14 +15,6 @@ import { Provider } from 'react-redux';
 
 const mockStore = configureMockStore();
 
-// it('renders MainComponent', () => {
-//   // let component = renderer.create(<Main />);
-
-//   // expect(component.toJSON()).toMatchSnapshot();
-//   renderer.create(<Main />);
-
-// });
-
 describe('My Connected React-Redux Component', () => {
   let store;
   let component;
