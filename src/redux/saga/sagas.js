@@ -2,9 +2,9 @@ import {
     all, delay, put, take, takeEvery,
     takeLatest, select, call
 } from 'redux-saga/effects'
-// import I18n from '../../common/i18nClient';
 import I18n from '../../common/i18nClient';
-import { doGet2 } from '../../service/ApiClient';
+import { actionChangeLanguage } from '../action/settingAction';
+import authAcrtion from '../action/authAcrtion'
 
 
 function* helloSaga() {
@@ -12,7 +12,6 @@ function* helloSaga() {
     // yield delay(2000)
     yield console.log('Hello Sagas!')
     // const path = yield '/users/toshihiro2010'
-    // let respose = yield call(doGet2, path)
     // yield console.log(" respose = > ", respose)
 }
 
@@ -59,7 +58,8 @@ export default function* rootSaga() {
         // takeEvery("actionAddProduct", testWatch),
         testWatch2(),
         // watchLanguage(),
-        takeEvery("SETTING/CHANGE_LANGUAGE", watchLanguage),
+        takeEvery(actionChangeLanguage().type, watchLanguage),
+        authAcrtion()
 
     ])
 }

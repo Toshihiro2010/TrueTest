@@ -7,11 +7,14 @@ import I18n from '../common/i18nClient'
 import { actionChangeLanguage } from '../redux/action/settingAction'
 import { doGet, doGet2, doPost, getFormData } from '../service/ApiClient';
 import { useNavigation } from '@react-navigation/native';
+import { login } from '../service/auth';
+import Geolocation from 'react-native-geolocation-service';
+
+
+
 
 
 const TestApi = (props) => {
-    // const [locale, setLocale] = useState(I18n.currentLocale())
-
     const [isLogined, setIsLogined] = useState(false)
 
     const { actionChangeLanguage } = props
@@ -34,14 +37,10 @@ const TestApi = (props) => {
             </Pressable>
 
             <Button onPress={() => {
-                // I18n.locale = "en"
-                // setLocale("en")
                 actionChangeLanguage("en")
 
             }} title="en" />
             <Button onPress={() => {
-                // I18n.locale = "th"
-                // setLocale("th")
                 actionChangeLanguage("th")
             }} title="th" />
 
@@ -79,13 +78,25 @@ const TestApi = (props) => {
             />
 
             <Button
-                accessibilityLabel="login"
+                accessibilityLabel="setToken"
                 onPress={() => {
                     setAccessToken("a1s2d3f34")
                     setIsLogined(!isLogined)
 
                 }}
-                title="setTolen"
+                title="setToken"
+            />
+
+            <Button
+                accessibilityLabel="login"
+                onPress={async () => {
+
+                    let res = await login("", "")
+                    console.log("ress= > ", res)
+                    // props.authtest()
+
+                }}
+                title="login"
             />
 
             <Text accessibilityLabel="loginstatus">{isLogined ? "success" : "fail"}</Text>
@@ -93,7 +104,22 @@ const TestApi = (props) => {
             <Button
                 accessibilityLabel="home"
                 onPress={() => {
-                    navigation.navigate("HomeScreen")
+
+                    // Geolocation.requestAuthorization().then((per) => {
+                    //     console.log("per=> ", per)
+                    // })
+                    
+                    Geolocation.getCurrentPosition(info => {
+                        console.log("info=> ", info)
+                    }, (err) => {
+                        console.log("error => ", err)
+                    });
+
+                    // Geolocation.requestAuthorization('whenInUse').then((res) => {
+                    //     console.log("whenInUse => ", res);
+                    // });
+
+                    // navigation.navigate("HomeScreen")
                 }}
                 title="HomeScreen"
             />
@@ -117,7 +143,14 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    actionChangeLanguage
+    actionChangeLanguage,
+    authtest: () => ({ type: "HHHHA", payload: "payload" })
+    // authtest: () => {
+    //     return async (dispatch) => {
+    //         await console.log("hello world")
+    //         await dispatch({ type: "HHHHA" })
+    //     }
+    // }
 }
 
 

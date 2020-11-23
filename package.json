@@ -26,6 +26,7 @@
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-native": "0.63.2",
+    "react-native-geolocation-service": "^5.0.0",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-i18n": "git+https://github.com/lemankk/react-native-i18n.git#e870017bd93c9b2e3762ae83a2db3de8c4257146",
     "react-native-modal-datetime-picker": "^9.0.0",
