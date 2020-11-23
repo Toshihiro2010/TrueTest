@@ -1,4 +1,4 @@
-import Axios from '../common/axiosInstacne'
+import Axios from './axiosInstacne'
 import { getAccessToken, setAccessToken } from '../common/storage/tokenStorage'
 
 const defaultHeader = {
@@ -20,7 +20,7 @@ const doPost = (url, data = {}, option = {}) => {
     const request = {
         method: 'POST',
         url,
-        data: data,
+        data,
         ...option
     }
 
@@ -32,7 +32,7 @@ const doPut = (url, data = {}, option = {}) => {
     const request = {
         method: 'PUT',
         url,
-        data: data,
+        data,
         ...option
     }
 
@@ -45,7 +45,7 @@ const doDelete = (url, data = {}, option = {}) => {
     const request = {
         method: 'DELETE',
         url,
-        data: data,
+        data,
         ...option
     }
 

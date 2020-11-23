@@ -1,6 +1,6 @@
 import Axios from 'axios';
-import { refeshToken } from '../service/ApiClient';
-import { getAccessToken, setAccessToken } from './storage/tokenStorage';
+import { refeshToken } from './ApiClient';
+import { getAccessToken, setAccessToken } from '../common/storage/tokenStorage';
 
 
 let axios = Axios.create()
@@ -11,14 +11,12 @@ axios.interceptors.request.use(async (config) => {
         config.baseURL = 'https://api.github.com/'
     }
 
+
     let _retry = await config?._retry
     if (!_retry) {
         const access_token = await getAccessToken()
         if (access_token) {
-
-            config.headers = await {
-                'Authorization': `Bearer ${access_token}`,
-            }
+            config.headers['Authorization'] = `Bearer ${access_token}`;
         }
     }
     // await console.log("config => ", config)
