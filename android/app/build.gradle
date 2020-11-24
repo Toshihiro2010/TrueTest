@@ -156,9 +156,11 @@ android {
         dev {
             dimension 'Test'
             applicationIdSuffix '.dev'
+            resValue("string","app_name","TrueTest Dev")
         }
         prod{
             dimension 'Test'
+            resValue("string","app_name","TrueTest")
         }
     }
     buildTypes {
