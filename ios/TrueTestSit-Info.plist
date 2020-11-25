@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>BuildEnvironment</key>
-	<string>production</string>
+	<string>Sit</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>TrueTest</string>
+	<string>TrueTest Sit</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
