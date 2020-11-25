@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { AppRegistry, LogBox } from 'react-native';
+import { AppRegistry, LogBox, NativeModules } from 'react-native';
 // import App from './src/App';
 import { name as appName } from './app.json';
 import { Provider } from 'react-redux'
@@ -15,6 +15,15 @@ const { persistor, store } = configStore()
 const MyApp = () => {
 
     useEffect(() => {
+
+        const { ConfigModule } = NativeModules
+
+        console.log("ReactNativeConfig => ", ConfigModule)
+        const buildType = ConfigModule?.BUILD_TYPE
+        const buildEnvironment = ConfigModule?.buildEnvironment
+        console.log("buildType => ", buildType)
+        console.log("buildEnvironment => ", buildEnvironment)
+
         return () => {
             clearAccessToken()
         }

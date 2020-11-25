@@ -24,6 +24,9 @@
 		51B1FB14256DF50600AC274A /* libPods-TrueTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 132382786D99C2A1951FBB74 /* libPods-TrueTest.a */; };
 		51B1FB16256DF50600AC274A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		51B1FB17256DF50600AC274A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		51B1FB7D256E01C400AC274A /* ConfigModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B1FB7C256E01C400AC274A /* ConfigModule.m */; };
+		51B1FB84256E039F00AC274A /* ConfigModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B1FB7C256E01C400AC274A /* ConfigModule.m */; };
+		51B1FB8B256E03A000AC274A /* ConfigModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B1FB7C256E01C400AC274A /* ConfigModule.m */; };
 		51E947C2256D118100A6C104 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		51E947C3256D118100A6C104 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		51E947C5256D118100A6C104 /* libPods-TrueTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 132382786D99C2A1951FBB74 /* libPods-TrueTest.a */; };
@@ -68,6 +71,8 @@
 		2D02E47B1E0B4A5D006451C7 /* TrueTest-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TrueTest-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* TrueTest-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TrueTest-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B1FB1D256DF50600AC274A /* TrueTestDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueTestDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51B1FB7B256E01C400AC274A /* ConfigModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigModule.h; sourceTree = "<group>"; };
+		51B1FB7C256E01C400AC274A /* ConfigModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigModule.m; sourceTree = "<group>"; };
 		51E945B1256CB2D500A6C104 /* TrueTestDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TrueTestDev-Info.plist"; path = "/Users/patipanongarj/Bent/TrueTest/ios/TrueTestDev-Info.plist"; sourceTree = "<absolute>"; };
 		51E945C8256CB48F00A6C104 /* TrueTestSit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TrueTestSit-Info.plist"; path = "/Users/patipanongarj/Bent/TrueTest/ios/TrueTestSit-Info.plist"; sourceTree = "<absolute>"; };
 		51E947CF256D118100A6C104 /* TrueTestSit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueTestSit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +166,7 @@
 		13B07FAE1A68108700A75B9A /* TrueTest */ = {
 			isa = PBXGroup;
 			children = (
+				51B1FB92256E056B00AC274A /* MyNativeModule */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -183,6 +189,15 @@
 				FEA18B0CA1C1F0355A4C00CB /* libPods-TrueTest-tvOSTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51B1FB92256E056B00AC274A /* MyNativeModule */ = {
+			isa = PBXGroup;
+			children = (
+				51B1FB7B256E01C400AC274A /* ConfigModule.h */,
+				51B1FB7C256E01C400AC274A /* ConfigModule.m */,
+			);
+			name = MyNativeModule;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -944,6 +959,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				51B1FB7D256E01C400AC274A /* ConfigModule.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -970,6 +986,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51B1FB10256DF50600AC274A /* AppDelegate.m in Sources */,
+				51B1FB8B256E03A000AC274A /* ConfigModule.m in Sources */,
 				51B1FB11256DF50600AC274A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -979,6 +996,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51E947C2256D118100A6C104 /* AppDelegate.m in Sources */,
+				51B1FB84256E039F00AC274A /* ConfigModule.m in Sources */,
 				51E947C3256D118100A6C104 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

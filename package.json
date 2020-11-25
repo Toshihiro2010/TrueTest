@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "npx react-native run-android --variant=devDebug --appIdSuffix=dev",
+    "android": "npx react-native run-android --variant devDebug --appIdSuffix dev",
     "android:prod": "react-native run-android --variant=prodDebug",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --scheme TrueTestDev",
+    "ios:sit": "react-native run-ios --scheme TrueTestSit",
+    "ios:prod": "react-native run-ios --scheme TrueTest",
     "start": "react-native start",
     "test": "jest --testPathPattern=__tests__/*",
     "test:q": "jest --testPathPattern=__tests__/QueryBoard.test.js",
