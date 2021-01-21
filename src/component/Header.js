@@ -13,6 +13,7 @@ const Header = (props) => {
     return (
         <View style={{ flexDirection: 'row', }}>
             <TextInput
+                accessibilityLabel="headerInput"
                 value={text}
                 onChangeText={(text) => {
                     setText(text)
@@ -27,9 +28,7 @@ const Header = (props) => {
             />
             <Button
                 onPress={() => {
-                    if (onAdd) {
-                        onAdd(text)
-                    }
+                    onAdd && onAdd(text)
                     setText(null)
                 }}
             >

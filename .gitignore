@@ -49,3 +49,4 @@ buck-out/
 
 #custom
 /__tests__/__snapshots__
+coverage
